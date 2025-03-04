@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+ .dl-container {
+   width: 80%;
+   max-width: 1000px;
+   background: white;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+   padding: 30px;
+   position: relative;
+   overflow: hidden;
+  margin: 50px auto;
+    /* 添加垂直和水平居中 */
+    display: block;
+    /* 确保块级元素 */
+ }
+
+ .dl-content-wrapper {
+   display: flex;
+   gap: 40px;
+ }
+
+ .dl-left-box,
+ .dl-right-box {
+   flex: 1;
+   opacity: 0;
+   transition: all 1s ease-out;
+   background: transparent;
+ }
+
+ .dl-left-box {
+   transform: translateX(-100%);
+   min-width: 400px;
+ }
+
+ /* 确保右侧区块不包含图片元素 */
+ .dl-right-box {
+   transform: translateX(100%);
+   padding: 20px 0;
+
+   /* 明确禁止图片显示 */
+   img {
+     display: none !important;
+   }
+ }
+
+ .dl-container.active .dl-left-box,
+ .dl-container.active .dl-right-box {
+   transform: translateX(0);
+   opacity: 1;
+ }
+
+ /* 图片仅存在于左侧盒子 */
+ .dl-logo {
+   width: 100%;
+   height: 300px;
+   background: #eee url(../photo/company-profile-illustration.jpg) center/cover;
+ }
+
+ .dl-content {
+   line-height: 1.8;
+   color: #333;
+ }
+
+ .dl-title {
+   font-size: 32px;
+   margin-bottom: 20px;
+   color: #2c3e50;
+ }
+
+ .dl-info-text {
+   margin-bottom: 15px;
+   font-size: 16px;
+ }
